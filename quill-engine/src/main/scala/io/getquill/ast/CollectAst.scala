@@ -4,7 +4,7 @@ import scala.collection.immutable.Queue
 import scala.reflect.ClassTag
 
 /**
- * The collection is treated as immutable internally but an ArrayBuffer is more effecient then Collection.list at
+ * The collection is treated as immutable internally but an ArrayBuffer is more efficient then Collection.list at
  * appending which is mostly what the collection does
  */
 class CollectAst[T](p: PartialFunction[Ast, T], val state: Queue[T])
