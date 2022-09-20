@@ -17,7 +17,7 @@ import io.getquill.ast._
  * The returning clause has an alias `Ident("r")` as well as the first filter clause.
  * These two filters will be combined into one at which point the meaning of `r.i`
  * in the 2nd filter will be confused for the first filter's alias (i.e. the `r` in `filter(r => ...)`.
- * Therefore, we need to change this vunerable `r.i` in the second filter clause to an `ExternalIdent`
+ * Therefore, we need to change this vulnerable `r.i` in the second filter clause to an `ExternalIdent`
  * before any of the simplifications are done.
  *
  * Note that we only want to do this for Queries inside of a `Returning` clause body.
