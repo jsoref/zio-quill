@@ -303,7 +303,7 @@ private[getquill] object AvoidAliasConflict {
 
   /**
    * Make sure query parameters do not collide with parameters of a AST function. Do this
-   * by walkning through the function's subtree and transforming and queries encountered.
+   * by walking through the function's subtree and transforming and queries encountered.
    */
   def sanitizeVariables(f: Function, dangerousVariables: Set[IdentName], traceConfig: TraceConfig): Function = {
     AvoidAliasConflict(dangerousVariables, false, traceConfig).applyFunction(f)
