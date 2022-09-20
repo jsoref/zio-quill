@@ -24,7 +24,7 @@ import io.getquill.util.Messages.{ TraceType, title }
  * the renames to the Property AST elements around the Ident's (and potentially Lifts etc...) with the renamed Quats.
  * </ul>
  *
- * The entire process above can be done with a series of stateless transformations with straighforward operations
+ * The entire process above can be done with a series of stateless transformations with straightforward operations
  * since the majority of the logic actually lives within the Quats themselves.
  */
 class RenameProperties(traceConfig: TraceConfig) {
