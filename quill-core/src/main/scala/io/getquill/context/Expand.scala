@@ -140,7 +140,7 @@ case class ExpandWithInjectables[T, C <: Context[_, _]](
   naming:        NamingStrategy,
   executionType: ExecutionType,
   subBatch:      List[T],
-  inejctables:   List[(String, T => ScalarLift)]
+  injectables:   List[(String, T => ScalarLift)]
 ) {
 
   val (string, externals) =
@@ -150,7 +150,7 @@ case class ExpandWithInjectables[T, C <: Context[_, _]](
       statement,
       forProbing = false,
       subBatch,
-      inejctables
+      injectables
     )
 
   val liftings = externals.collect {
