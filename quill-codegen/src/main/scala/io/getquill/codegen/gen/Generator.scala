@@ -22,7 +22,7 @@ trait Generator {
   def filter(tc: RawSchema[TableMeta, ColumnMeta]): Boolean = true
 
   /**
-   * Should we prefix object/package produced by this generator? Set this as the the value of that.
+   * Should we prefix object/package produced by this generator? Set this as the value of that.
    * Otherwise set this to be the empty string.
    */
   def packagePrefix: String
