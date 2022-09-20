@@ -2,7 +2,7 @@ package io.getquill.sql.norm
 
 import io.getquill.ast.{ Ast, CollectAst, Ident, Property, StatefulTransformer }
 import io.getquill.context.sql.{ DistinctKind, FlatJoinContext, FlattenSqlQuery, FromContext, InfixContext, JoinContext, QueryContext, SelectValue, SetOperationSqlQuery, SqlQuery, TableContext, UnaryOperationSqlQuery }
-import io.getquill.norm.PropertyMatroshka
+import io.getquill.norm.PropertyMatryoshka
 import io.getquill.quat.Quat
 
 import scala.collection.mutable
@@ -65,7 +65,7 @@ object RemoveUnusedSelects {
 
   private def filterUnused(select: List[SelectValue], references: Set[Property]): List[SelectValue] = {
     val usedAliases = references.map {
-      case PropertyMatroshka(_, list, _) => list.mkString
+      case PropertyMatryoshka(_, list, _) => list.mkString
     }.toSet
     select.filter(sv =>
       sv.alias.forall(aliasValue => usedAliases.contains(aliasValue)) ||
