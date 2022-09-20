@@ -457,7 +457,7 @@ trait Parsing extends ValueComputation with QuatMaking with MacroUtilBase {
   private def ident(x: TermName, quat: Quat): Ident = identClean(Ident(x.decodedName.toString, quat))
 
   /**
-   * In order to guarentee consistent behavior across multiple databases, we have begun to explicitly to null-check
+   * In order to guarantee consistent behavior across multiple databases, we have begun to explicitly to null-check
    * nullable columns that are wrapped inside of `Option[T]` whenever a `Option.map`, `Option.flatMap`, `Option.forall`, and
    * `Option.exists` are used. However, we would like users to be warned that the behavior of improperly structured queries
    * may change as a result of this modification (see #1302 for more details). This method search the subtree of the
