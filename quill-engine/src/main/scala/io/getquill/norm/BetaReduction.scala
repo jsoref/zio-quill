@@ -20,7 +20,7 @@ import scala.collection.immutable.{ Map => IMap }
  * we are either plugging in a Generic type that is being specialized (e.g. X is Quat.Generic) or
  * reducing some type CC(foo:V) to the corresponding renamed type CC(foo:V)[foo->renameFoo].
  * This general behavior we call `ReplaceWithReduction` i.e. Quat types are replaced with whatever
- * varaibles are being beta-reduced irregardless of subtyping.
+ * variables are being beta-reduced irregardless of subtyping.
  */
 sealed trait TypeBehavior
 object TypeBehavior {
