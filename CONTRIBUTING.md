@@ -270,7 +270,7 @@ Some additional arguments you can add to your compiler's VM args provide insight
 ```
 
 In Intellij, add them in the SBT settings if your are compiling using SBT:
-![Intellj-SBT-Settings-Additional.png](quill-doc/etc/Intellj-SBT-Settings-Additional.png)
+![IntelliJ-SBT-Settings-Additional.png](quill-doc/etc/IntelliJ-SBT-Settings-Additional.png)
 
 ## 'Trick' Debugging via the Dynamic Query API
 
