@@ -193,8 +193,8 @@ trait OrientDBIdiom extends Idiom {
     case UnionAllOperation => stmt"UNION ALL"
   }
 
-  protected def tokenOrderBy(criterias: List[OrderByCriteria])(implicit strategy: NamingStrategy, idiomContext: IdiomContext) =
-    stmt"ORDER BY ${criterias.token}"
+  protected def tokenOrderBy(criteria: List[OrderByCriteria])(implicit strategy: NamingStrategy, idiomContext: IdiomContext) =
+    stmt"ORDER BY ${criteria.token}"
 
   implicit def sourceTokenizer(implicit strategy: NamingStrategy, idiomContext: IdiomContext): Tokenizer[FromContext] = Tokenizer[FromContext] {
     case TableContext(name, alias)  => stmt"${name.token}"
