@@ -8,7 +8,7 @@ import io.getquill.sql.Common.ContainsImpurities
 
 /**
  * Notes for the conceptual examples below. Gin and Tonic were used as prototypical
- * examples of things that "are joined". In the table form, they are alude to the following
+ * examples of things that "are joined". In the table form, they are aliased to the following
  * tonics is Query[Tonic], tonic is Tonic
  * gins is Query[Gin], is Gin
  * waters is Query[Water], water is Water
