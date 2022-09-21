@@ -4,7 +4,7 @@ import io.getquill.ast.Ast
 
 /**
  * Defines the primary interface by which information in Quill is composed. This includes not only
- * queries but all code fragements.
+ * queries but all code fragments.
  * A quotation can be a simple value:
  * {{
  * val pi = quote(3.14159)

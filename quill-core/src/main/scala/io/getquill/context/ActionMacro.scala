@@ -131,7 +131,7 @@ class ActionMacro(val c: MacroContext)
             val idiomContext = $idiomContext
             /* for liftQuery(people:List[Person]) `batch` is `people` */
             /* TODO Need secondary check to see if context is actually capable of batch-values insert */
-            /* If there is a INSERT ... VALUES clause this will be cnoded as ValuesClauseToken(lifts) which we need to duplicate */
+            /* If there is a INSERT ... VALUES clause this will be encoded as ValuesClauseToken(lifts) which we need to duplicate */
             /* batches: List[List[Person]] */
             val batches =
               if ($canDoBatch && $numRows != 1) {
@@ -299,7 +299,7 @@ class ActionMacro(val c: MacroContext)
           super.apply(e)
       }
 
-    // Only extrace lifts that come from values-clauses:
+    // Only extract lifts that come from values-clauses:
     // liftQuery(people).foreach(ps => query[Person].filter(_.name == lift("not this")).insertValue(_.name -> <these!>, ...))
     override def apply(e: Ast): (Ast, StatefulTransformer[List[(ScalarTag, ScalarLift)]]) =
       e match {

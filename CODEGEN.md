@@ -86,7 +86,7 @@ gen.writeFiles("src/main/scala/com/my/project")
 You can parse column and table names using either the `SnakeCaseNames` or the and the `LiteralNames` parser
 which are used with the respective Quill Naming Strategies. They cannot be customized further with this code generator.
 
-The following case case classes will be generated
+The following case classes will be generated
 ````scala
 // src/main/scala/com/my/project/public/Person.scala
 package com.my.project.public
@@ -109,7 +109,7 @@ in order to generate your schemas with `querySchema` objects.
 
 The `ComposeableTraitsJdbcCodegen` enables more customized code generation.
 It allows you to determine the tables to generate entity classes for,
-their naming stragety, the types for columns in Scala,
+their naming strategy, the types for columns in Scala,
 and generates the necessary `querySchema` object in order to map the fields.
 Additionally, it generates a database-independent query schema trait which can be composed 
 with a `Context` object of your choice.

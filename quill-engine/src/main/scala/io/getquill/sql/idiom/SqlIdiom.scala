@@ -352,8 +352,8 @@ trait SqlIdiom extends Idiom {
       case (None, Some(offset))        => stmt"$query OFFSET ${offset.token}"
     }
 
-  protected def tokenOrderBy(criterias: List[OrderByCriteria])(implicit astTokenizer: Tokenizer[Ast], strategy: NamingStrategy) =
-    stmt"ORDER BY ${criterias.token}"
+  protected def tokenOrderBy(criteria: List[OrderByCriteria])(implicit astTokenizer: Tokenizer[Ast], strategy: NamingStrategy) =
+    stmt"ORDER BY ${criteria.token}"
 
   implicit def sourceTokenizer(implicit astTokenizer: Tokenizer[Ast], strategy: NamingStrategy, idiomContext: IdiomContext): Tokenizer[FromContext] = Tokenizer[FromContext] {
     case TableContext(name, alias)  => stmt"${name.token} ${tokenizeTableAlias(strategy, alias).token}"

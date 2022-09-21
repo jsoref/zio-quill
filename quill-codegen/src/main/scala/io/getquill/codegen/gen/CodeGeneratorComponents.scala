@@ -52,7 +52,7 @@ trait CodeGeneratorComponents extends HasBasicMeta with QuerySchemaNaming {
    * case class Person(firstName:String, lastName:String, age:Int)
    *
    * object Person {
-   *   // Taking ts.tableName.snakeToLowerCamel will ensure each one has a different name. Otherise
+   *   // Taking ts.tableName.snakeToLowerCamel will ensure each one has a different name. Otherwise
    *   // all of them will be 'query' which will result in a compile error.
    *   def alphaPerson = querySchema[Person]("ALPHA.PERSON", ...)
    *   def bravoPerson = querySchema[Person]("BRAVO.PERSON", ...)

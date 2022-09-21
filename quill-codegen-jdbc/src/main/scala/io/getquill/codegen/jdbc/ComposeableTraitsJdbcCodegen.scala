@@ -88,7 +88,7 @@ import javax.sql.DataSource
  *   object PersonDao { def query = querySchema[Person](...) }
  * }
  *
- * // Invalid because MyCustomContext has a PersonDao from AlphaExtensions and and a PersonDao from BravoExtensions which collide.
+ * // Invalid because MyCustomContext has a PersonDao from AlphaExtensions and a PersonDao from BravoExtensions which collide.
  * object MyCustomContext extends SqlMirrorContext[H2Dialect, Literal](H2Dialect, Literal)
  *   with AlphaExtensions[H2Dialect, Literal] with BravoExtensions[H2Dialect, Literal]
  * </pre>
@@ -116,7 +116,7 @@ import javax.sql.DataSource
  * // Since PersonDao is inside MyCustomContext.alpha and MyCustomContext.bravo as opposed to MyCustomContext
  * // there will be no collision.
  * object MyCustomContext extends SqlMirrorContext[H2Dialect, Literal](H2Dialect, Literal)
- *   with AlphaExtnsions[H2Dialect, Literal] with BravoExtensions[H2Dialect, Literal]
+ *   with AlphaExtensions[H2Dialect, Literal] with BravoExtensions[H2Dialect, Literal]
  * </pre>
  *
  */

@@ -6,7 +6,7 @@ import io.getquill.context.sql.{ FlattenSqlQuery, SelectValue }
 
 /**
  * Remove aliases at the top level of the AST since they are not needed
- * (quill uses select row indexes to figure out what data corresponds to what encodeable object)
+ * (quill uses select row indexes to figure out what data corresponds to what encodable object)
  * as well as entities whose aliases are the same as their selection e.g. "select x.foo as foo"
  * since this just adds syntactic noise.
  */

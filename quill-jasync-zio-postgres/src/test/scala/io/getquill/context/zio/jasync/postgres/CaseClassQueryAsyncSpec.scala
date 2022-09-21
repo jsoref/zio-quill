@@ -34,6 +34,6 @@ class CaseClassQueryAsyncSpec extends CaseClassQuerySpec with ZioSpec {
   }
 
   "Example 3 - Inline Record as Filter" in {
-    runSyncUnsafe(context.run(`Ex 3 Inline Record Usage`)) should contain theSameElementsAs `Ex 3 Inline Record Usage exepected result`
+    runSyncUnsafe(context.run(`Ex 3 Inline Record Usage`)) should contain theSameElementsAs `Ex 3 Inline Record Usage expected result`
   }
 }

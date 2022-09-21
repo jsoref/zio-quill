@@ -36,6 +36,6 @@ class CaseClassQueryNdbcPostgresSpec extends CaseClassQuerySpec {
   }
 
   "Example 3 - Inline Record as Filter" in {
-    get(context.run(`Ex 3 Inline Record Usage`)) must contain theSameElementsAs `Ex 3 Inline Record Usage exepected result`
+    get(context.run(`Ex 3 Inline Record Usage`)) must contain theSameElementsAs `Ex 3 Inline Record Usage expected result`
   }
 }

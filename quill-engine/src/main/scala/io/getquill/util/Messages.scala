@@ -27,7 +27,7 @@ object Messages {
   def traceOpinions = cache("quill.trace.opinion", variable("quill.trace.opinion", "quill_trace_opinion", "false").toBoolean)
   def traceAstSimple = cache("quill.trace.ast.simple", variable("quill.trace.ast.simple", "quill_trace_ast_simple", "false").toBoolean)
   def traceQuats = cache("quill.trace.quat", QuatTrace(variable("quill.trace.quat", "quill_trace_quat", QuatTrace.None.value)))
-  def cacheDynamicQueries = cache("quill.query.cacheDaynamic", variable("quill.query.cacheDaynamic", "query_query_cacheDaynamic", "true").toBoolean)
+  def cacheDynamicQueries = cache("quill.query.cacheDynamic", variable("quill.query.cacheDynamic", "query_query_cacheDynamic", "true").toBoolean)
   def querySubexpand = cache("quill.query.subexpand", variable("quill.query.subexpand", "query_query_subexpand", "true").toBoolean)
   def quillLogFile = cache("quill.log.file", LogToFile(variable("quill.log.file", "quill_log_file", "false")))
   def errorDetail = cache("quill.error.detail", variable("quill.error.detail", "quill_error_detail", "false").toBoolean)

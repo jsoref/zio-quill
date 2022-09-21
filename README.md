@@ -35,7 +35,7 @@ Note: The GIF example uses Eclipse, which shows compilation messages to the user
 > ### [Scastie](https://scastie.scala-lang.org/) is a great tool to try out Quill without having to prepare a local environment. It works with [mirror contexts](#mirror-context), see [this](https://scastie.scala-lang.org/QwOewNEiR3mFlKIM7v900A) snippet as an example.
 
 Quill has integrations with many libraries. If you are using a regular RDBMS e.g. PostgreSQL
-and want to use Quill to query it with an asychronous, non-blocking, reactive application, the easiest way to get
+and want to use Quill to query it with an asynchronous, non-blocking, reactive application, the easiest way to get
 started is by using an awesome library called ZIO.
 
 A simple ZIO + Quill application looks like this:
@@ -75,7 +75,7 @@ libraryDependencies ++= Seq(
 ```
 
 You can find this code (with some more examples) complete with a docker-provided Postgres database [here](https://github.com/deusaquilus/zio-quill-gettingstarted).
-A veriety of other examples using Quill with ZIO are available in the [examples](https://github.com/zio/zio-quill/tree/master/quill-jdbc-zio/src/test/scala/io/getquill/examples) folder.
+A variety of other examples using Quill with ZIO are available in the [examples](https://github.com/zio/zio-quill/tree/master/quill-jdbc-zio/src/test/scala/io/getquill/examples) folder.
 
 ## Choosing a Module
 
@@ -1617,7 +1617,7 @@ ctx.run(a) //: List[Long] size = 2. Contains 1 @ positions, where row was insert
 
 Just as in regular queries use the extended insert/update syntaxes to achieve finer-grained control of the data being created/modified modified.
 For example, if the ID is a generated value you can skip ID insertion like this:
-(This can also be accomplied with an insert-meta).
+(This can also be accomplished with an insert-meta).
 ```scala
 // case class Person(id: Int, name: String, age: Int)
 val a = quote {
@@ -1812,7 +1812,7 @@ val a = quote {
 ## Batch Optimization
 
 When doing batch INSERT queries (as well as UPDATE, and DELETE), Quill mostly delegates the functionality to standard JDBC batching.
-This functionality works roughtly in the following way.
+This functionality works roughly in the following way.
 ```scala
 val ps: PreparedStatement = connection.prepareStatement("INSERT ... VALUES ...")
 // 1. Iterate over the rows
@@ -1888,7 +1888,7 @@ The server supports a maximum of 2100 parameters. Reduce the number of parameter
 This means that in SQL Server, for a batch-size of 100, you can only insert into a table of up to 21 columns.
 
 In the future, we hope to alleviate this issue by directly substituting variables into `?` variables before the query is executed
-however such functionality could potentially come at the risk of SQL-injection vunerabilities.
+however such functionality could potentially come at the risk of SQL-injection vulnerabilities.
 
 ## Printing Queries
 
@@ -2449,7 +2449,7 @@ Normalization caching was introduced to improve the situation, which will speedu
 To disable dynamic normalization caching, pass following property to sbt during compile time
 
 ```
-sbt -Dquill.query.cacheDaynamic=false
+sbt -Dquill.query.cacheDynamic=false
 ```
 
 
@@ -2509,7 +2509,7 @@ run(q)
 // ) AS e WHERE e.value <= 100
 ```
 
-If you are sure that the the content of your infix is a pure function, you canse use the `pure` method
+If you are sure that the content of your infix is a pure function, you can use the `pure` method
 in order to indicate to Quill that the infix clause can be copied in the query. This gives Quill much
 more leeway to flatten your query, possibly improving performance.
 
@@ -2532,7 +2532,7 @@ run(q)
 #### Summary
 Use `sql"...".asCondition` to express an infix that represents a conditional expression.
 
-#### Explination
+#### Explanation
 
 When synthesizing queries for databases which do not have proper boolean-type support (e.g. SQL Server,
 Oracle etc...) boolean infix clauses inside projections must become values.

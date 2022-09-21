@@ -36,6 +36,6 @@ class CaseClassQueryJAsyncSpec extends CaseClassQuerySpec {
   }
 
   "Example 3 - Inline Record as Filter" in {
-    await(testContext.run(`Ex 3 Inline Record Usage`)) should contain theSameElementsAs `Ex 3 Inline Record Usage exepected result`
+    await(testContext.run(`Ex 3 Inline Record Usage`)) should contain theSameElementsAs `Ex 3 Inline Record Usage expected result`
   }
 }

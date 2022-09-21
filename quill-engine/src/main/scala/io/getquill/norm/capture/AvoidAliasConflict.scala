@@ -34,7 +34,7 @@ import scala.collection.immutable.Set
  * that aliases do not conflict.
  *
  * One important side-function of this transformation is to transform temporary variables (e.g. as created by
- * the `AttachToEntity` phase) into permanant ones of the form x[0-9]+. Since `AvoidAliasConflict` typically
+ * the `AttachToEntity` phase) into permanent ones of the form x[0-9]+. Since `AvoidAliasConflict` typically
  * runs not on the entire Ast but the sub-parts of it used by normalizations, making temporary aliases
  * permanent cannot be done in these sub-parts because the 'state' of this transformation is not fully know
  * i.e. because aliases of outer clauses may not be present. For this reason, this transformation is specifically
@@ -66,7 +66,7 @@ private[getquill] case class AvoidAliasConflict(state: Set[IdentName], detemp: B
       }
   }
 
-  // Cannot realize direct super-cluase of a join because of how ExpandJoin does $a$b.
+  // Cannot realize direct super-clause of a join because of how ExpandJoin does $a$b.
   // This is tested in JoinComplexSpec which verifies that ExpandJoin behaves correctly.
   object CanRealias {
     def unapply(q: Ast): Boolean =
@@ -302,8 +302,8 @@ private[getquill] object AvoidAliasConflict {
     }
 
   /**
-   * Make sure query parameters do not collide with paramters of a AST function. Do this
-   * by walkning through the function's subtree and transforming and queries encountered.
+   * Make sure query parameters do not collide with parameters of a AST function. Do this
+   * by walking through the function's subtree and transforming and queries encountered.
    */
   def sanitizeVariables(f: Function, dangerousVariables: Set[IdentName], traceConfig: TraceConfig): Function = {
     AvoidAliasConflict(dangerousVariables, false, traceConfig).applyFunction(f)
